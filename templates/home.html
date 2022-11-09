@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{%for news in object_list%}
+<div class="news_list">
+
+    <h2><a href="{% url 'news_post_detail' news.pk %}">{{ news.title }}</a></h2>
+    <h5><a href="">{{ news.author }}</a></h5>
+    <p>{{ news.message }}</p>
+    
+</div>
+{% endfor %}
+{%endblock%}
